@@ -1,23 +1,29 @@
-import java.util.Scanner;
-public class Perfect{
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the value of n: ");
-        int n = scanner.nextInt();
-        System.out.println("Perfect numbers up to " + n + ":");
-        for (int i = 2; i <= n; i++) {
-            int sum = 1;
-            for (int j = 2; j * j <= i; j++) {
-                if (i % j == 0) {
-                    sum += j;
-                    if (j * j != i) {
-                        sum += i / j;
-                    }
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		 int i,j,n,sum=0;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the value ");
+        n=sc.nextInt();
+        for(i=1;i<=n;i++)
+        {
+            sum=0;
+            for(j=1;j<=(i/2);j++)
+            {
+                if(i%j==0)
+                {
+              sum=sum+j;
+              
                 }
             }
-            if (sum == i) {
-                System.out.print(i + " ");
+            if(i==1)
+            System.out.println("Perfect no o upto n " + i);
+            if(sum==i)
+            {
+                System.out.println("Perfect no o upto n " + i);
             }
-        }
-    }
+     }
+
+	}
 }
